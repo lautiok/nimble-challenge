@@ -13,7 +13,7 @@ export async function getCandidateByEmail(
 
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || "Error fetching candidate");
+    throw new Error(error.message || "Error al cargar el candidato");
   }
 
   return response.json() as Promise<Candidate>;
@@ -24,7 +24,7 @@ export async function getJobs(): Promise<Job[]> {
 
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || "Error fetching jobs");
+    throw new Error(error.message || "Error al cargar las posiciones ");
   }
 
   return response.json() as Promise<Job[]>;
@@ -46,7 +46,7 @@ export async function applyToJob(
 
   if (!response.ok) {
     const error = await response.json();
-    throw new Error(error.message || "Error applying to job");
+    throw new Error(error.message || "Error al aplicar al trabajo");
   }
 
   return response.json() as Promise<{ ok: boolean }>;
